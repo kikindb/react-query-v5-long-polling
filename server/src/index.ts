@@ -6,7 +6,7 @@ const app = new Elysia();
 
 app.use(cors());
 app.get('/', () => 'Hello Elysia');
-app.get('/random', ({ set }) => {
+app.get('/api/random', ({ set }) => {
   const rr = randomResponse();
   set.status = rr;
   return {
@@ -16,7 +16,7 @@ app.get('/random', ({ set }) => {
   };
 });
 
-app.get('/random2', ({ set }) => {
+app.get('/api/random2', ({ set }) => {
   set.status = 500;
   return {
     status: 500,
