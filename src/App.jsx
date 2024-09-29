@@ -5,9 +5,13 @@ import { useQuery, useQueryClient } from '@tanstack/react-query';
 
 const MAX_RETRIES = 5;
 const TIMEOUT_MS = 1000;
-
+const HOST = 'http://localhost';
+const PORT = '3000';
+const PATH = '/api';
+const RANDOM_ENDPOINT = '/random';
+const RANDOM_URL = `${HOST}:${PORT}${PATH}${RANDOM_ENDPOINT}`;
 function getRandomData() {
-  return axios('http://localhost:3000/random');
+  return axios(RANDOM_URL);
 }
 
 function App() {
