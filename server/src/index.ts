@@ -14,7 +14,9 @@ app.get('/random', ({ set }) => {
     paymentStatus: rr === 200 ? 'Success' : 'Pending',
     message: rr === 200 ? 'This is the data' : null,
   };
+});
 
+app.get('/random2', ({ set }) => {
   set.status = 500;
   return {
     status: 500,
